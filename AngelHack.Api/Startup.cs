@@ -66,6 +66,15 @@ namespace AngelHack.Api
                 app.UseHsts();
             }
 
+            app.UseCors(c =>
+            {
+                c.AllowAnyHeader();
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
+                c.DisallowCredentials();
+
+            });
+
             app.UseHttpsRedirection();
             app.UseMvc();
 
@@ -74,6 +83,8 @@ namespace AngelHack.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "MeLevaPraCasa API V1");
             });
+
+
 
         }
     }
