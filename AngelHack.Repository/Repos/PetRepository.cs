@@ -40,17 +40,53 @@ namespace AngelHack.Repository.Repos
 
         public async Task<Pet> SelecionarPorId(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(DbConnection.SQLConnectionString))
+            {
+                return await connection.QueryFirstOrDefaultAsync<Pet>($"SELECT Nome, Idade, Descricao, NomeTutor, " +
+                                                                      $"Vacinado, Castrado, Match, Imagem, Bairro, Cidade, Estado " +
+                                                                      $"FROM Pet WHERE Id = @Id", new
+                                                                      {
+                                                                          Id = id
+                                                                      });
+            }
         }
 
         public async Task<IEnumerable<Pet>> SelecionarTodosAsync()
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(DbConnection.SQLConnectionString))
+            {
+                return await connection.QueryAsync<Pet>($"SELECT Nome, Idade, Descricao, NomeTutor, " +
+                                                        $"Vacinado, Castrado, Match, Imagem, Bairro, Cidade, Estado " +
+                                                        $"FROM Pet");
+            }
         }
 
         public async Task<Pet> Update(int id, Pet pet)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(DbConnection.SQLConnectionString))
+            {
+                var petId = await connection.QuerySingleAsync<int>($"UPDATE Pet " +
+                                                                   $"SET Nome = @Nome, Idade = @Idade, Descricao = @Descricao, NomeTutor = @NomeTutor " +
+                                                                   $"Vacinado = @Vacinado, Castrado = @Castrado, Match = @Match, Imagem = @Imagem, Bairro = @Bairro " +
+                                                                   $"Cidade = @Cidade, Estado = @Estado " +
+                                                                   $"WHERE Id = @Id" , new
+                                                                   {
+                                                                       Nome = pet.Nome,
+                                                                       Idade = pet.Idade,
+                                                                       Descricao = pet.Descricao,
+                                                                       NomeTutor = pet.NomeTutor,
+                                                                       Vacinado = pet.Vacinado,
+                                                                       Castrado = pet.Castrado,
+                                                                       Match = pet.Match,
+                                                                       Imagem = pet.Imagem,
+                                                                       Bairro = pet.Endereco.Bairro,
+                                                                       Cidade = pet.Endereco.Cidade,
+                                                                       Estado = pet.Endereco.Estado,
+                                                                       Id = pet.Id
+                                                                   });
+
+                return await SelecionarPorId(petId);
+            }
         }
     }
 }
