@@ -19,7 +19,7 @@ namespace AngelHack.Api.Controllers
 
 
         /// <summary>
-        /// Seleciona todos os Pets do banco
+        /// Seleciona todos os Pets
         /// </summary>
         /// <returns>Lista de Pets</returns>
         [HttpGet]
@@ -45,6 +45,20 @@ namespace AngelHack.Api.Controllers
             var pet = await petBusiness.SelecionarPorId(id);
             if (pet == null)
                 return NotFound();
+
+            return Ok(pet);
+        }
+
+        /// <summary>
+        /// Seleciona todos os Pets que deram match  
+        /// </summary>
+        /// <returns>Lista de Pets com Match</returns>
+        [HttpGet("Match")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetTodosComMatch()
+        {
+            var pet = await petBusiness.SelecionarTodosComMatch();
 
             return Ok(pet);
         }

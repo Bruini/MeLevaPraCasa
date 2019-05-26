@@ -50,6 +50,19 @@ namespace AngelHack.Repository.Repos
             }
         }
 
+        public async Task<IEnumerable<Pet>> SelecionarTodosComMatch()
+        {
+            using (var connection = new SqlConnection(DbConnection.SQLConnectionString))
+            {
+                return await connection.QueryAsync<Pet>($"SELECT Id, Nome, Idade, Descricao, NomeTutor, " + 
+                                                        $"Vacinado, Castrado, Match, Imagem, Bairro, Cidade, Estado " +
+                                                        $"FROM Pet WHERE Match = @Match", new 
+                                                        {
+                                                            Match = true
+                                                        });
+            }
+        }
+
         public async Task<IEnumerable<Pet>> SelecionarTodosAsync()
         {
             using (var connection = new SqlConnection(DbConnection.SQLConnectionString))
