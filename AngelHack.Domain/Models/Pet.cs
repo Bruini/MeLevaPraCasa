@@ -9,6 +9,7 @@
         public Endereco Endereco { get; set; }
         public bool Vacinado { get; set; }
         public bool Castrado { get; set; }
+        public string Imagem { get; set; }
 
     }
 }
