@@ -6,26 +6,29 @@
         public string Nome { get; set; }
         public int Idade { get; set; }
         public string Descricao { get; set; }
-        public Endereco Endereco { get; set; }
         public string NomeTutor { get; set; }
         public bool Vacinado { get; set; }
         public bool Castrado { get; set; }
         public bool Match { get; set; }
         public string Imagem { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
 
 
-        public Pet(int id, string nome, int idade, string descricao, Endereco endereco, string nomeTutor, bool vacinado, bool castrado, bool match, string imagem)
+        public Pet(string nome, int idade, string descricao, string nomeTutor, bool vacinado, bool castrado, bool match, string imagem, string bairro, string cidade, string estado)
         {
-            Id = id;
             Nome = nome;
             Idade = idade;
             Descricao = descricao;
-            Endereco = endereco;
-            NomeTutor = NomeTutor;
+            NomeTutor = nomeTutor;
             Vacinado = vacinado;
             Castrado = castrado;
             Match = match;
             Imagem = imagem;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
         }
 
         public Pet()

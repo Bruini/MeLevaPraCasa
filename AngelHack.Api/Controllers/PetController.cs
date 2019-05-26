@@ -1,8 +1,7 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
-using AngelHack.Api.Inputs;
+using AngelHack.Business.Inputs;
 using AngelHack.Business.Interfaces;
-using AngelHack.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AngelHack.Api.Controllers
@@ -18,6 +17,11 @@ namespace AngelHack.Api.Controllers
             this.petBusiness = petBusiness;
         }
 
+
+        /// <summary>
+        /// Seleciona todos os Pets do banco
+        /// </summary>
+        /// <returns>Lista de Pets</returns>
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -28,6 +32,11 @@ namespace AngelHack.Api.Controllers
             return Ok(pet);
         }
 
+        /// <summary>
+        /// Seleciona um pet por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A informação referente ao id do pet</returns>
         [HttpGet("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -40,53 +49,37 @@ namespace AngelHack.Api.Controllers
             return Ok(pet);
         }
 
+        /// <summary>
+        /// Inseri um novo pet
+        /// </summary>
+        /// <param name="petInput"></param>
+        /// <returns>Os dados da pet cadastrado</returns>
         [HttpPost("Cadastro")]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> PostPet([FromBody] PetInput petInput)
         {
-            Pet newPet = new Pet()
-            {
-                Id = petInput.Id,
-                Nome = petInput.Nome,
-                Descricao = petInput.Descricao,
-                Idade = petInput.Idade,
-                Endereco = petInput.Endereco,
-                NomeTutor = petInput.NomeTutor,
-                Castrado = petInput.Castrado,
-                Vacinado = petInput.Vacinado,
-                Match = petInput.Match,
-                Imagem = petInput.Imagem
-            };
 
-            var pet = await petBusiness.Inserir(newPet);
+            var pet = await petBusiness.Inserir(petInput);
             if (pet == null)
                 return BadRequest();
 
-            return CreatedAtRoute(nameof(GetPorId), pet);
+            return Created(nameof(GetPorId), pet);
         }
 
-
+        /// <summary>
+        /// Altera as informações do pet
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="petInput"></param>
+        /// <returns>Os dados do pet alterado</returns>
         [HttpPut("Alterar/{id}")]
         [ProducesResponseType((int)HttpStatusCode.Accepted)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] PetInput petInput)
         {
-            Pet newPet = new Pet()
-            {
-                Id = petInput.Id,
-                Nome = petInput.Nome,
-                Descricao = petInput.Descricao,
-                Idade = petInput.Idade,
-                Endereco = petInput.Endereco,
-                NomeTutor = petInput.NomeTutor,
-                Castrado = petInput.Castrado,
-                Vacinado = petInput.Vacinado,
-                Match = petInput.Match,
-                Imagem = petInput.Imagem
-            };
 
-            var pet = await petBusiness.Update(id, newPet);
+            var pet = await petBusiness.Update(id, petInput);
             if (pet == null)
                 return NotFound();
 

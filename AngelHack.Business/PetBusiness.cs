@@ -1,4 +1,5 @@
-﻿using AngelHack.Business.Interfaces;
+﻿using AngelHack.Business.Inputs;
+using AngelHack.Business.Interfaces;
 using AngelHack.Domain.Models;
 using AngelHack.Repository.Interfaces;
 using System.Collections.Generic;
@@ -15,9 +16,9 @@ namespace AngelHack.Business
             this.petRepository = petRepository;
         }
 
-        public async Task<Pet> Inserir(Pet pet)
+        public async Task<Pet> Inserir(PetInput petInput)
         {
-            Pet newPet = new Pet(pet.Id, pet.Nome, pet.Idade, pet.Descricao, pet.Endereco, pet.NomeTutor, pet.Vacinado, pet.Castrado, pet.Match, pet.Imagem);
+            Pet newPet = new Pet(petInput.Nome, petInput.Idade, petInput.Descricao, petInput.NomeTutor, petInput.Vacinado, petInput.Castrado, petInput.Match, petInput.Imagem, petInput.Bairro, petInput.Cidade, petInput.Estado);
 
             return await petRepository.Inserir(newPet);
 
@@ -36,15 +37,17 @@ namespace AngelHack.Business
             return await petRepository.SelecionarTodosAsync();
         }
 
-        public async Task<Pet> Update(int id, Pet pet)
+        public async Task<Pet> Update(int id, PetInput petInput)
         {
             var petExiste = await petRepository.SelecionarPorId(id);
             if (petExiste == null)
                 return null;
 
-            Pet newPet = new Pet(pet.Id, pet.Nome, pet.Idade, pet.Descricao, pet.Endereco, pet.NomeTutor, pet.Vacinado, pet.Castrado, pet.Match, pet.Imagem);
+            Pet newPet = new Pet(petInput.Nome, petInput.Idade, petInput.Descricao, petInput.NomeTutor, petInput.Vacinado, petInput.Castrado, petInput.Match, petInput.Imagem, petInput.Bairro, petInput.Cidade, petInput.Estado);
 
-            return await petRepository.Update(id, newPet);
+            await petRepository.Update(id, newPet);
+
+            return await petRepository.SelecionarPorId(id);
         }
     }
 }
