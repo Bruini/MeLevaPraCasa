@@ -6,31 +6,31 @@
 
 <ion-content padding>
 
-  <form>
+  <form [formGroup]="doeForm">
     
     <ion-item lines="none">
       <ion-label position="stacked">Nome</ion-label>
-      <ion-input></ion-input>
+      <ion-input class="form-control" formControlName="nome"></ion-input>
     </ion-item>
 
     <ion-item lines="none" class="input-box">
       <ion-label position="stacked">Idade</ion-label>
-      <ion-input></ion-input>
+      <ion-input class="form-control" formControlName="idade"></ion-input>
     </ion-item>
 
     <ion-item lines="none" class="input-box">
       <ion-label position="stacked">Descrição</ion-label>
-      <ion-input></ion-input>
+      <ion-input class="form-control" formControlName="descricao"></ion-input>
     </ion-item>
 
     <ion-item lines="none" class="input-box">
       <ion-label position="stacked">Localização</ion-label>
-      <ion-input></ion-input>
+      <ion-input class="form-control" formControlName="localizacao"></ion-input>
     </ion-item>
 
     <ion-item lines="none" class="input-box">
       <ion-label position="stacked">Tutor</ion-label>
-      <ion-input></ion-input>
+      <ion-input class="form-control" formControlName="tutor"></ion-input>
     </ion-item>
 
     <ion-grid>
@@ -44,6 +44,6 @@
       </ion-row>
     </ion-grid>
 
-  </form>
+  </form> 
 
 </ion-content>

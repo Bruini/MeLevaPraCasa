@@ -9,6 +9,8 @@ const httpOptions = {
 };
 
 const apiUrl = 'http://angelhackapi-dev.us-west-2.elasticbeanstalk.com/';
+const feed = apiUrl + 'api/pet';
+const score = apiUrl + 'api/pet/Match';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +22,18 @@ export class PetService {
   ) { }
 
   getPets(): Observable<Pet[]> {
-    return this._httpClient.get<Pet[]>(apiUrl)
+    return this._httpClient.get<Pet[]>(feed)
       .pipe(
         tap(pets => console.log('leu os pets')),
         catchError(this.handleError('getPets', []))
+      );
+  }
+
+  getScore(): Observable<Pet[]> {
+    return this._httpClient.get<Pet[]>(score)
+      .pipe(
+        tap(score => console.log('leu os score')),
+        catchError(this.handleError('getScore', []))
       );
   }
 
