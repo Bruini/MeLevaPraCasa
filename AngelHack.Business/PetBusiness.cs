@@ -32,6 +32,10 @@ namespace AngelHack.Business
             return await petRepository.SelecionarPorId(id);
         }
 
+        public async Task<IEnumerable<Pet>> SelecionarTodosComMatch()
+        {
+            return await petRepository.SelecionarTodosComMatch();
+        }
         public async Task<IEnumerable<Pet>> SelecionarTodosAsync()
         {
             return await petRepository.SelecionarTodosAsync();
