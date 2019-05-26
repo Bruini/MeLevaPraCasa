@@ -6,7 +6,7 @@
     <members>
         <member name="M:AngelHack.Api.Controllers.PetController.GetTodos">
             <summary>
-            Seleciona todos os Pets do banco
+            Seleciona todos os Pets
             </summary>
             <returns>Lista de Pets</returns>
         </member>
@@ -16,6 +16,12 @@
             </summary>
             <param name="id"></param>
             <returns>A informação referente ao id do pet</returns>
+        </member>
+        <member name="M:AngelHack.Api.Controllers.PetController.GetTodosComMatch">
+            <summary>
+            Seleciona todos os Pets que deram match  
+            </summary>
+            <returns>Lista de Pets com Match</returns>
         </member>
         <member name="M:AngelHack.Api.Controllers.PetController.PostPet(AngelHack.Business.Inputs.PetInput)">
             <summary>
