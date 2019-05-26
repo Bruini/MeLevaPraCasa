@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using AngelHack.Repository;
 
 namespace AngelHack.Api
 {
@@ -54,6 +55,7 @@ namespace AngelHack.Api
 
             });
 
+        IoCService.ChildServiceRegister(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
