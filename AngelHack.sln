@@ -21,9 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngelHack.Repository", "Ang
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Api", "1 - Api", "{2E0E66A9-01FA-437D-A795-246D9B5E83C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelHack.Api", "AngelHack.Api\AngelHack.Api.csproj", "{9E0ECF7D-D807-427D-A605-83F2DFBCBFF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngelHack.Api", "AngelHack.Api\AngelHack.Api.csproj", "{9E0ECF7D-D807-427D-A605-83F2DFBCBFF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelHack.IoC", "AngelHack.IoC\AngelHack.IoC.csproj", "{43C609B0-9A5E-4DD4-866F-21AD904FB743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngelHack.IoC", "AngelHack.IoC\AngelHack.IoC.csproj", "{43C609B0-9A5E-4DD4-866F-21AD904FB743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelHack.Business", "AngelHack.Business\AngelHack.Business.csproj", "{E071E9EB-FD8A-42D7-95D8-01E5C00A6CF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{43C609B0-9A5E-4DD4-866F-21AD904FB743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43C609B0-9A5E-4DD4-866F-21AD904FB743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43C609B0-9A5E-4DD4-866F-21AD904FB743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E071E9EB-FD8A-42D7-95D8-01E5C00A6CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E071E9EB-FD8A-42D7-95D8-01E5C00A6CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E071E9EB-FD8A-42D7-95D8-01E5C00A6CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E071E9EB-FD8A-42D7-95D8-01E5C00A6CF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{3F9B8805-ABED-4C8B-9274-9E7F5803C8F9} = {28914564-C82A-44F1-AB0C-94BE3472F29D}
 		{9E0ECF7D-D807-427D-A605-83F2DFBCBFF2} = {2E0E66A9-01FA-437D-A795-246D9B5E83C0}
 		{43C609B0-9A5E-4DD4-866F-21AD904FB743} = {4873ECDD-73E5-44E1-94DA-1D787A078978}
+		{E071E9EB-FD8A-42D7-95D8-01E5C00A6CF1} = {AD0DFB34-918A-4F0E-983D-CFFD6950DBBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E2722AE-05CE-47AE-A873-A92EF5B84C70}
