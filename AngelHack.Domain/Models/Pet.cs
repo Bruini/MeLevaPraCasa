@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AngelHack.Domain.Models
+﻿namespace AngelHack.Domain.Models
 {
     public class Pet
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }
