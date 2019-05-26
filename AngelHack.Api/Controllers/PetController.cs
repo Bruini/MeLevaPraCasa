@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Threading.Tasks;
 using AngelHack.Api.Inputs;
 using AngelHack.Business.Interfaces;
 using AngelHack.Domain.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AngelHack.Api.Controllers
@@ -59,6 +55,7 @@ namespace AngelHack.Api.Controllers
                 NomeTutor = petInput.NomeTutor,
                 Castrado = petInput.Castrado,
                 Vacinado = petInput.Vacinado,
+                Match = petInput.Match,
                 Imagem = petInput.Imagem
             };
 
@@ -68,6 +65,33 @@ namespace AngelHack.Api.Controllers
 
             return CreatedAtRoute(nameof(GetPorId), pet);
         }
+
+
+        [HttpPut("Alterar/{id}")]
+        [ProducesResponseType((int)HttpStatusCode.Accepted)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] PetInput petInput)
+        {
+            Pet newPet = new Pet()
+            {
+                Id = petInput.Id,
+                Nome = petInput.Nome,
+                Descricao = petInput.Descricao,
+                Idade = petInput.Idade,
+                Endereco = petInput.Endereco,
+                NomeTutor = petInput.NomeTutor,
+                Castrado = petInput.Castrado,
+                Vacinado = petInput.Vacinado,
+                Match = petInput.Match,
+                Imagem = petInput.Imagem
+            };
+
+            var pet = await petBusiness.Update(id, newPet);
+            if (pet == null)
+                return NotFound();
+
+            return Accepted(nameof(GetPorId), pet);
+        } 
 
     }
 }

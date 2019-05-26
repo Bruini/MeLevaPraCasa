@@ -1,8 +1,4 @@
 ﻿using AngelHack.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AngelHack.Api.Inputs
 {
@@ -16,6 +12,7 @@ namespace AngelHack.Api.Inputs
         public string NomeTutor { get; set; }
         public bool Vacinado { get; set; }
         public bool Castrado { get; set; }
+        public bool Match { get; set; }
         public string Imagem { get; set; }
     }
 }

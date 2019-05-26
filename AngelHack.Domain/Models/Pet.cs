@@ -10,10 +10,11 @@
         public string NomeTutor { get; set; }
         public bool Vacinado { get; set; }
         public bool Castrado { get; set; }
+        public bool Match { get; set; }
         public string Imagem { get; set; }
 
 
-        public Pet(int id, string nome, int idade, string descricao, Endereco endereco, string nomeTutor, bool vacinado, bool castrado, string imagem)
+        public Pet(int id, string nome, int idade, string descricao, Endereco endereco, string nomeTutor, bool vacinado, bool castrado, bool match, string imagem)
         {
             Id = id;
             Nome = nome;
@@ -23,6 +24,7 @@
             NomeTutor = NomeTutor;
             Vacinado = vacinado;
             Castrado = castrado;
+            Match = match;
             Imagem = imagem;
         }
 
