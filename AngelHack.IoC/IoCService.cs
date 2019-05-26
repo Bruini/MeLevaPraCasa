@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AngelHack.Business;
+using AngelHack.Business.Interfaces;
+using AngelHack.Repository.Interfaces;
+using AngelHack.Repository.Repos;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AngelHack.IoC
 {
@@ -9,17 +13,17 @@ namespace AngelHack.IoC
         public void Register(IServiceCollection service)
         {
             RepositoryService(service);
-            DomainService(service);
+            BusinessService(service);
         }
 
         public void RepositoryService(IServiceCollection service)
         {
-            //service.AddScoped<IPetRepository, PetRepository>();
+            service.AddScoped<IPetRepository, PetRepository>();
         }
 
-        public void DomainService(IServiceCollection service)
+        public void BusinessService(IServiceCollection service)
         {
-            //service.AddScoped<IPetDomain, PetDomain>();
+            service.AddScoped<IPetBusiness, PetBusiness>();
         }
     }
 }

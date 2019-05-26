@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\AngelHack.Domain\AngelHack.Domain.csproj" />
+    <ProjectReference Include="..\AngelHack.Repository\AngelHack.Repository.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,8 +7,29 @@
         public int Idade { get; set; }
         public string Descricao { get; set; }
         public Endereco Endereco { get; set; }
+        public string NomeTutor { get; set; }
         public bool Vacinado { get; set; }
         public bool Castrado { get; set; }
+        public string Imagem { get; set; }
+
+
+        public Pet(int id, string nome, int idade, string descricao, Endereco endereco, string nomeTutor, bool vacinado, bool castrado, string imagem)
+        {
+            Id = id;
+            Nome = nome;
+            Idade = idade;
+            Descricao = descricao;
+            Endereco = endereco;
+            NomeTutor = NomeTutor;
+            Vacinado = vacinado;
+            Castrado = castrado;
+            Imagem = imagem;
+        }
+
+        public Pet()
+        {
+
+        }
 
     }
 }
