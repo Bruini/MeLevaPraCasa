@@ -8,7 +8,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const apiUrl = 'http://angelhackapi-dev.us-west-2.elasticbeanstalk.com/';
+const apiUrl = 'https://localhost:5001/';
 const feed = apiUrl + 'api/pet';
 const score = apiUrl + 'api/pet/Match';
 
