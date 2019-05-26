@@ -74,7 +74,7 @@ namespace AngelHack.Api
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vicelulas API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MeLevaPraCasa API V1");
             });
 
         }
