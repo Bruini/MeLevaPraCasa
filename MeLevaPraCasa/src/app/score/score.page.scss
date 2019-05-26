@@ -6,3 +6,38 @@ ion-content{
     --background: #FCD268;
 }
   
+ion-card{
+  background: #fff;
+}
+
+ion-card-content{
+  background: #fff;
+  text-align: justify;
+  span{
+    font-weight: bold;
+  }
+}
+
+ion-icon{
+  font-size: 1.2em;
+  margin: 0 0.1em;
+}
+
+ion-card-header{
+  text-align: center;
+}
+
+.rounded-img {
+  border-radius: 60%;
+  max-width: 20%;
+}
+
+ion-card-subtitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --margin: 0;
+  p{
+    font-size: 1.2em;
+  }
+}

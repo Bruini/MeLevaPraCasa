@@ -1,11 +1,14 @@
 <ion-content padding>
 
   <ion-grid class="full-heigth">
-    <ion-row class="ion-align-items-end full-heigth">
+    <ion-row class="ion-align-items-center full-heigth">
       <ion-col>
-        <img src="../../assets/pets/logo.png" alt="">
         <div class="buttons">
-          <ion-button [routerLink]="['/subscribe-ado']">Adotar</ion-button>
+          <div class="ion-align-items-center">
+            <ion-icon name="paw"></ion-icon>
+          </div>
+          <p>Olá! Escolha uma opção</p>
+          <ion-button [routerLink]="['/tabs/feed']">Adotar</ion-button>
           <ion-button [routerLink]="['/subscribe-donation']">Doar</ion-button>
         </div>
       </ion-col>

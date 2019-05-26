@@ -1,34 +1,35 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Feed
+      Pets
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
-  <ion-slides>
+<ion-content>
 
     <ion-card>
-      <ion-card-content>
-        <ion-slides class="pets">
-          <ion-slide class="pet">
-            <div class="me-adote">
-              <ion-img src="/assets/pets/batata.jpeg"></ion-img>
-              Me leve pra casa :(
+      <ion-card-content [routerLink]="['/info-dog']">
+
+        <ion-slides>
+
+          <ion-slide>
+            <div>
+              <ion-img src="../assets/pets/batata.jpeg"></ion-img>
+              <p>BATATA</p>
             </div>
           </ion-slide>
-          <ion-slide class="pet">
-            <div class="me-adote">
-              <ion-img src="/assets/pets/batata.jpeg"></ion-img>
-              Me leve pra casa2 :(
+          <ion-slide>
+            <div>
+              <ion-img src="../assets/pets/batata.jpeg"></ion-img>
+              <p>PEDRITA</p>
             </div>
           </ion-slide>
+
         </ion-slides>
+        
+
       </ion-card-content>
     </ion-card>
-
-  </ion-slides>
 
 </ion-content>

@@ -1,0 +1,10 @@
+ion-modal {
+  &.alert {
+    --width: 85%;
+    --border-radius: 4px;
+    ion-backdrop {
+      background-color: #1b2b42 !important;
+      opacity: 0.9 !important;
+    }
+  }
+}

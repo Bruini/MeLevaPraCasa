@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PetService } from '../services/pet/pet.service';
+import { Pet } from '../models/pet';
 
 @Component({
   selector: 'app-feed',
@@ -7,8 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedPage implements OnInit {
 
-  ngOnInit() { }
+  pets: Pet[];
 
-  constructor() {}
+  ngOnInit() {
+    this.obterPets();
+  }
+
+  constructor(
+    private _petService: PetService
+  ) { }
+
+  obterPets() {
+    this._petService.getPets()
+      .subscribe(response => {
+        this.pets = response;
+      });
+  }
 
 }

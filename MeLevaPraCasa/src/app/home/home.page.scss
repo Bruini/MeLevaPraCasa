@@ -1,14 +1,25 @@
-ion-button {
+ion-content{
   --background: #fcd268;
-  font-weight: bold;
+}
+
+ion-button {
+  --background: #3F99DB;
+  height: 45px;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
+  text-align: center;
   flex-direction: column;
+  color: #424242;
 }
 
 .full-heigth {
   height: 100%;
+}
+
+ion-icon{
+  font-size: 4em;
+  color: #fff;
 }

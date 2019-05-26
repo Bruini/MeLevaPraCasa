@@ -35,6 +35,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'info-dog',
+        children: [
+          {
+            path: '',
+            loadChildren: '../info-dog/info-dog.module#InfoDogPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'

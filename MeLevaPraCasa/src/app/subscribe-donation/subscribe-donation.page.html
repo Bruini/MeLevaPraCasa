@@ -4,9 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
-  <!-- <form [formGroup]="formGroupDoacao" (ngSubmit)="doacao()"> -->
+  <form>
+    
     <ion-item lines="none">
       <ion-label position="stacked">Nome</ion-label>
       <ion-input></ion-input>
@@ -32,9 +33,17 @@
       <ion-input></ion-input>
     </ion-item>
 
-    <ion-button type="submit" expand="block" [routerLink]="['/tabs/feed']">Doar</ion-button>
-    <ion-button expand="block" fill="clear" [routerLink]="['/home']">Voltar</ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" fill="clear" [routerLink]="['/home']">Voltar</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button type="submit" expand="block" (click)="abreModal()">Doar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <!-- </form> -->
+  </form>
 
 </ion-content>

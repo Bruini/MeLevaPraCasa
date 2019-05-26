@@ -18,6 +18,7 @@ const routes: Routes = [
     path: 'subscribe-donation',
     loadChildren: './subscribe-donation/subscribe-donation.module#SubscribeDonationPageModule'
   },
+  { path: 'info-dog', loadChildren: './info-dog/info-dog.module#InfoDogPageModule' },
 
 ];
 @NgModule({
