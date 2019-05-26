@@ -26,29 +26,29 @@ namespace AngelHack.Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddCors();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1",
-                    new Info
-                    {
-                        Title = "AngelHack",
-                        Version = "v1",
-                        Description = "API da MeLevaPraCasa - AngelHack",
-                        Contact = new Contact
-                        {
-                            Name = "MeLevaPraCasa",
-                            Url = "https://github.com/Bruini/MeLevaPraCasa"
-                        }
-                    });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1",
+            //        new Info
+            //        {
+            //            Title = "AngelHack",
+            //            Version = "v1",
+            //            Description = "API da MeLevaPraCasa - AngelHack",
+            //            Contact = new Contact
+            //            {
+            //                Name = "MeLevaPraCasa",
+            //                Url = "https://github.com/Bruini/MeLevaPraCasa"
+            //            }
+            //        });
 
-                // Usar a documentação XML dos métodos.
+            //    // Usar a documentação XML dos métodos.
 
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath);
+            //    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            //    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            //    c.IncludeXmlComments(xmlPath);
 
 
-            });
+            //});
 
             var ioc = new IoCService();
             ioc.Register(services);
@@ -78,11 +78,11 @@ namespace AngelHack.Api
             app.UseHttpsRedirection();
             app.UseMvc();
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MeLevaPraCasa API V1");
-            });
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "MeLevaPraCasa API V1");
+            //});
 
 
 
