@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AngelHack.Domain\AngelHack.Domain.csproj" />
     <ProjectReference Include="..\AngelHack.Repository\AngelHack.Repository.csproj" />
   </ItemGroup>
 

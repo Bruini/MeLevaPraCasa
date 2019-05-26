@@ -20,4 +20,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="4.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AngelHack.IoC\AngelHack.IoC.csproj" />
+  </ItemGroup>
+
 </Project>

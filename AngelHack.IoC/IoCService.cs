@@ -1,10 +1,12 @@
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace AngelHack.Repository
+namespace AngelHack.IoC
 {
     public class IoCService
     {
-        public void ChildServiceRegister(IServiceCollection service)
+        private IServiceCollection services;
+
+        public void Register(IServiceCollection service)
         {
             RepositoryService(service);
             DomainService(service);
