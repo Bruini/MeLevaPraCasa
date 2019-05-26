@@ -7,7 +7,7 @@
 <ion-content padding>
 
   <form [formGroup]="doeForm">
-    
+
     <ion-item lines="none">
       <ion-label position="stacked">Nome</ion-label>
       <ion-input class="form-control" formControlName="nome"></ion-input>
@@ -24,14 +24,30 @@
     </ion-item>
 
     <ion-item lines="none" class="input-box">
-      <ion-label position="stacked">Localização</ion-label>
-      <ion-input class="form-control" formControlName="localizacao"></ion-input>
+      <ion-label position="stacked">Tutor</ion-label>
+      <ion-input class="form-control" formControlName="nomeTutor"></ion-input>
     </ion-item>
 
     <ion-item lines="none" class="input-box">
-      <ion-label position="stacked">Tutor</ion-label>
-      <ion-input class="form-control" formControlName="tutor"></ion-input>
+      <ion-label position="stacked">Estado</ion-label>
+      <ion-input class="form-control" formControlName="estado"></ion-input>
     </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Cidade</ion-label>
+      <ion-input class="form-control" formControlName="cidade"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row padding>
+        <ion-col>
+          <ion-checkbox></ion-checkbox> Vacinado
+        </ion-col>
+        <ion-col>
+            <ion-checkbox></ion-checkbox> Castrado
+          </ion-col>
+      </ion-row>
+    </ion-grid>
 
     <ion-grid>
       <ion-row>
@@ -39,11 +55,11 @@
           <ion-button expand="block" fill="clear" [routerLink]="['/home']">Voltar</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button type="submit" expand="block" (click)="abreModal()">Doar</ion-button>
+          <ion-button type="submit" expand="block" (click)="criarPet()">Doar</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
 
-  </form> 
+  </form>
 
 </ion-content>

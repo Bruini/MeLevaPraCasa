@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'subscribe-ado',
-    loadChildren: './subscribe-ado/subscribe-ado.module#SubscribeAdoPageModule'
-  },
-  {
     path: 'subscribe-donation',
     loadChildren: './subscribe-donation/subscribe-donation.module#SubscribeDonationPageModule'
   },

@@ -9,20 +9,14 @@
 <ion-content>
 
     <ion-card>
-      <ion-card-content [routerLink]="['/info-dog']">
+      <ion-card-content>
 
         <ion-slides>
 
-          <ion-slide>
+          <ion-slide *ngFor="let pet of pets">
             <div>
-              <ion-img src="../assets/pets/batata.jpeg"></ion-img>
-              <p>BATATA</p>
-            </div>
-          </ion-slide>
-          <ion-slide>
-            <div>
-              <ion-img src="../assets/pets/batata.jpeg"></ion-img>
-              <p>PEDRITA</p>
+              <ion-img [src]="pet.imagem"></ion-img>
+              <p>{{pet.nome}}</p>
             </div>
           </ion-slide>
 

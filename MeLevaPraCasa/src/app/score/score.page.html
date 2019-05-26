@@ -8,10 +8,10 @@
 
 <ion-content padding>
 
-  <ion-card>
+  <ion-card *ngFor="let pet of pets">
     <ion-card-header>
       <ion-card-subtitle>
-        <p>Luís</p>
+        <p>{{pet.nomeTutor}}</p>
         <ion-icon name="arrow-forward"></ion-icon>
         <ion-icon name="paw"></ion-icon>
         <ion-icon name="arrow-forward"></ion-icon>
@@ -21,29 +21,11 @@
 
     <ion-card-content>
       <p>
-        <span>Batata</span>
-        foi adotado por Pedro, e quem proporcionou esse encontro foi o Luís, que demais!
+        <span>{{pet.nome}}</span>
+        foi adotado por Pedro, e quem proporcionou esse encontro foi o {{pet.nomeTutor}}, que demais!
       </p>
     </ion-card-content>
 
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>
-        <p>Lucas</p>
-        <ion-icon name="arrow-forward"></ion-icon>
-        <ion-icon name="paw"></ion-icon>
-        <ion-icon name="arrow-forward"></ion-icon>
-        <p>Bruna</p> 
-      </ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
-      <p>
-        <span>Café</span>
-        foi adotado por Bruna, e quem proporcionou esse encontro foi o Lucas, que demais!
-      </p>
-    </ion-card-content>
   </ion-card>
 
 </ion-content>
