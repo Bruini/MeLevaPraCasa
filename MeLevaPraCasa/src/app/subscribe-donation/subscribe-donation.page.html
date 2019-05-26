@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil do Pet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <form [formGroup]="formGroupDoacao" (ngSubmit)="doacao()"> -->
+    <ion-item lines="none">
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Idade</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Descrição</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Localização</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Tutor</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" [routerLink]="['/tabs/feed']">Doar</ion-button>
+    <ion-button expand="block" fill="clear" [routerLink]="['/home']">Voltar</ion-button>
+
+  <!-- </form> -->
+
+</ion-content>

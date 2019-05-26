@@ -1,0 +1,14 @@
+ion-button {
+  --background: #fcd268;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.full-heigth {
+  height: 100%;
+}
