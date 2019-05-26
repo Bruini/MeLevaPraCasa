@@ -5,11 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
-=======
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
->>>>>>> 015597ecdd41e2c4d448a1fc9846212110990899
   </ItemGroup>
 
 </Project>
