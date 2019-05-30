@@ -3,7 +3,7 @@ Esse aplicativo foi realizado no desafio da AngelHack 2019 (30hrs), na qual a no
 
 ### Team:
 * [Lucas Contesini - CEO/BackEnd Developer](https://github.com/LucasContesini)
-* [Luis Lança - FrontEnd Developer](https://github.com/lancaluis)
+* [Luis Lança - UI/UX/FrontEnd Developer](https://github.com/lancaluis)
 * [Renato Spakauskas - Business/Speaker/Manager](https://www.linkedin.com/in/renatospakauskas/)
 * [Pedro Bruini - FullStack Developer](https://github.com/Bruini)
 
