@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil do Pet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form>
+    
+    <ion-item lines="none">
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Idade</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Descrição</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Localização</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="input-box">
+      <ion-label position="stacked">Tutor</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" fill="clear" [routerLink]="['/home']">Voltar</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button type="submit" expand="block" (click)="abreModal()">Doar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+
+</ion-content>

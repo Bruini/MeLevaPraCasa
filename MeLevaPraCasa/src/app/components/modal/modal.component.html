@@ -1,0 +1,23 @@
+<ion-content padding>
+
+  <div class="item disintegration-target">
+
+    <div class="modal-content">
+
+      <div class="header-modal">
+        <p class="p-header">Aviso</p>
+        <ion-icon name="close" class="closed" (click)="fecharModal()"></ion-icon>
+      </div>
+
+      <div class="icon-text">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>        
+          <p class="p-center">O perfil do seu Pet já está sendo preparado. Aproveite pra ver nosso feed!</p>
+      </div>
+
+      <ion-button [routerLink]="['/tabs/feed']">Ver Pets</ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>
